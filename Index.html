@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#21151d">
+
+<title>Letters to You 🥀 | Yuri Kazutori</title>
+
+<style>
+/* =========================================
+   LETTERS TO YOU — GOTHIC ROMANCE
+   Created by Yuri Kazutori ♡
+========================================= */
+
+:root {
+    --background: #100d12;
+    --panel: #241820;
+    --wine: #81283b;
+    --wine-dark: #581522;
+    --rose: #d9aaa9;
+    --rose-light: #e8c4bd;
+    --muted: #c5a5ad;
+    --paper: #fffaf5;
+    --ink: #4a1724;
+    --border: #6f3543;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    color: #ead8d0;
+    font-family: Georgia, "Times New Roman", serif;
+
+    background:
+        radial-gradient(
+            ellipse at top,
+            #48202d 0%,
+            #21151d 48%,
+            var(--background) 100%
+        );
+}
+
+/* Decorative gothic symbols */
+
+body::before {
+    content: "✦ · 🥀 · ✦ · 🖤 · ✦";
+
+    position: fixed;
+    top: 12px;
+    left: 0;
+
+    width: 100%;
+    text-align: center;
+
+    font-size: 15px;
+    letter-spacing: 7px;
+    opacity: 0.35;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+.ambient-rose {
+    position: fixed;
+    z-index: -1;
+    pointer-events: none;
+
+    opacity: 0.16;
+    font-size: clamp(42px, 8vw, 95px);
+}
+
+.rose-one {
+    left: 2%;
+    bottom: 5%;
+    transform: rotate(-20deg);
+}
+
+.rose-two {
+    right: 3%;
+    top: 35%;
+    transform: rotate(18deg);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    width: min(1120px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 38px 12px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+
+    color: var(--rose-light);
+    font-size: clamp(28px, 4.3vw, 46px);
+    font-weight: normal;
+    line-height: 1.3;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 16px #8b263555,
+        2px 3px 4px #0008;
+}
+
+header p {
+    margin: 12px 0 0;
+
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* =========================================
+   MAIN RESPONSIVE LAYOUT
+========================================= */
+
+.container {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    align-items: start;
+    gap: 22px;
+
+    width: min(1120px, calc(100% - 36px));
+    margin: 14px auto 36px;
+}
+
+.panel {
+    width: 100%;
+    min-width: 0;
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #291c24ee,
+            #1c161dee
+        );
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 34px #0004,
+        inset 0 0 25px #8b263510;
+}
+
+.panel h2 {
+    margin: 0 0 12px;
+
+    color: var(--rose);
+    font-size: clamp(21px, 2.2vw, 27px);
+    font-weight: normal;
+    line-height: 1.4;
+}
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
+
+.help,
+.open-hint,
+small {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.help {
+    margin: 0 0 16px;
+}
+
+label {
+    display: block;
+    margin: 16px 0 7px;
+
+    color: #d4b0ad;
+    font-size: 14px;
+}
+
+input,
+textarea,
+select {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    margin: 0;
+    padding: 11px 12px;
+
+    background: #171219;
+    color: #f0dfd7;
+
+    border: 1px solid #71404a;
+    border-radius: 6px;
+
+    font: 14px Arial, sans-serif;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #92777f;
+    font-style: italic;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+button:focus-visible,
+.envelope-area:focus-visible {
+    outline: 2px solid #d18b98;
+    outline-offset: 2px;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 17px;
+}
+
+button {
+    min-height: 40px;
+    padding: 10px 13px;
+
+    border-radius: 6px;
+    font: 14px Arial, sans-serif;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 16px #8b263533;
+    filter: brightness(1.08);
+}
+
+.buttons button {
+    flex: 1 1 125px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.primary {
+    background:
+        linear-gradient(
+            135deg,
+            var(--wine),
+            var(--wine-dark)
+        );
+
+    color: #fff0e8;
+    border: 1px solid #b46c75;
+}
+
+.secondary {
+    background: #32212b;
+    color: #e4c1c0;
+    border: 1px solid #71404a;
+}
+
+.dark {
+    background: #120e13;
+    color: #dcb7b4;
+    border: 1px solid #8b2635;
+}
+
+/* =========================================
+   ENVELOPE PREVIEW
+========================================= */
+
+.preview {
+    width: 100%;
+    min-width: 0;
+    text-align: center;
+}
+
+.preview > h2 {
+    margin-bottom: 8px;
+}
+
+.open-hint {
+    margin: 0 0 4px;
+}
+
+.envelope-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(300px, 100%);
+    height: 215px;
+
+    margin: 20px auto 12px;
+
+    perspective: 900px;
+    cursor: pointer;
+}
+
+.envelope {
+    position: relative;
+    isolation: isolate;
+
+    width: 100%;
+    height: 160px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #762536,
+            #4e1524
+        );
+
+    border: 1px solid #a75c69;
+    border-radius: 5px;
+
+    box-shadow: 0 14px 28px #0005;
+}
+
+/* Envelope flap */
+
+.envelope::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            145deg,
+            #a14b5c,
+            #7d2b3f
+        );
+
+    clip-path:
+        polygon(
+            0 0,
+            100% 0,
+            50% 66%
+        );
+
+    transform-origin: top;
+    transition: transform 0.65s ease;
+
+    z-index: 4;
+}
+
+/* Rose decoration */
+
+.envelope::after {
+    content: "🥀";
+
+    position: absolute;
+    top: 52px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 36px;
+    z-index: 5;
+
+    transition: opacity 0.25s ease;
+}
+
+/* Letter inside the envelope */
+
+.letter {
+    position: absolute;
+    top: 10px;
+    left: 5%;
+
+    width: 90%;
+    height: 130px;
+
+    padding: 12px;
+
+    overflow: hidden;
+    overflow-wrap: anywhere;
+
+    background: var(--paper);
+    color: var(--ink);
+
+    border: 1px solid #b99a80;
+    border-radius: 4px;
+
+    text-align: left;
+    z-index: 2;
+
+    transition:
+        transform 0.65s ease,
+        height 0.65s ease;
+}
+
+.letter h3 {
+    margin: 0 0 8px;
+
+    color: #781e30;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.letter p {
+    margin: 8px 0;
+    font-size: 13px;
+    white-space: pre-wrap;
+}
+
+/* Opening animation */
+
+.envelope.open::before {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.open::after {
+    opacity: 0;
+}
+
+.envelope.open .letter {
+    height: 190px;
+    transform: translateY(-82px);
+
+    overflow-y: auto;
+    z-index: 5;
+}
+
+/* =========================================
+   FULL LOVE LETTER
+========================================= */
+
+.paper {
+    display: none;
+
+    width: 100%;
+    min-width: 0;
+
+    margin: 18px 0 0;
+    padding: clamp(18px, 3vw, 30px);
+
+    background: var(--paper);
+    color: var(--ink);
+
+    border: 1px solid #a87970;
+    border-radius: 4px;
+
+    box-shadow:
+        0 0 25px #0004,
+        inset 0 0 30px #a87a5a18;
+
+    text-align: left;
+    line-height: 1.85;
+
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.paper.opened {
+    display: block;
+    animation: appear 0.4s ease;
+}
+
+.paper h3 {
+    margin: 8px 0 22px;
+
+    text-align: center;
+
+    color: #721b2c;
+    font-size: clamp(23px, 3vw, 30px);
+    font-style: italic;
+    line-height: 1.35;
+}
+
+.paper .greeting {
+    color: #721b2c;
+}
+
+.paper .message {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.paper .signature {
+    margin-top: 25px;
+
+    text-align: right;
+    color: #721b2c;
+}
+
+.preview.opened .envelope-area,
+.preview.opened .open-hint {
+    display: none;
+}
+
+/* =========================================
+   SHARING AREA
+========================================= */
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 25px 0;
+}
+
+#shareLink {
+    margin-top: 5px;
+}
+
+#status {
+    min-height: 1.5em;
+    margin-top: 10px;
+
+    color: var(--rose);
+    font-size: 14px;
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    width: min(900px, calc(100% - 30px));
+
+    margin: 0 auto;
+    padding: 8px 12px 30px;
+
+    text-align: center;
+
+    color: var(--muted);
+    line-height: 1.6;
+
+    overflow-wrap: anywhere;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+.author strong {
+    color: #d6a0a4;
+    text-shadow: 0 0 8px #8b263555;
+}
+
+.copyright {
+    color: #8e747d;
+    font-size: 12px;
+}
+
+/* Received letter */
+
+.received-letter {
+    padding: 24px;
+
+    color: var(--ink);
+
+    border: 1px solid #a87970;
+
+    line-height: 1.8;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.received-letter h2 {
+    text-align: center;
+    color: #721b2c;
+    overflow-wrap: anywhere;
+}
+
+.received-letter .received-signature {
+    margin-top: 24px;
+    text-align: right;
+    font-style: italic;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   TABLET AND MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 780px) {
+    .container {
+        grid-template-columns: minmax(0, 1fr);
+
+        width: calc(100% - 24px);
+        gap: 16px;
+    }
+
+    .panel {
+        padding: 19px;
+    }
+
+    header {
+        padding-top: 32px;
+    }
+}
+
+@media (max-width: 380px) {
+    .container {
+        width: calc(100% - 16px);
+    }
+
+    .panel {
+        padding: 14px;
+    }
+
+    .buttons button {
+        flex-basis: 100%;
+    }
+
+    header h1 {
+        letter-spacing: 1px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="ambient-rose rose-one" aria-hidden="true">🥀</div>
+<div class="ambient-rose rose-two" aria-hidden="true">🌹</div>
+
+<header>
+    <h1>🥀 Letters to You 🥀</h1>
+    <p>To love, to long, to belong to someone. ♡</p>
+</header>
+
+<main class="container" id="mainContainer">
+
+    <!-- =================================
+         LETTER EDITOR
+    ================================== -->
+
+    <section class="panel" id="editorPanel">
+
+        <h2>🎀 Create your letter</h2>
+
+        <p class="help">
+            Put your feelings into words and make this letter yours.
+        </p>
+
+        <label for="recipient">Their name</label>
+        <input
+            id="recipient"
+            type="text"
+            maxlength="100"
+            placeholder="e.g. My favorite person"
+        >
+
+        <label for="title">Letter title</label>
+        <input
+            id="title"
+            type="text"
+            maxlength="160"
+            placeholder="e.g. A little reminder for you"
+        >
+
+        <label for="message">Your message</label>
+        <textarea
+            id="message"
+            maxlength="10000"
+            placeholder="Write everything you wish you could say..."
+        ></textarea>
+
+        <label for="sender">From</label>
+        <input
+            id="sender"
+            type="text"
+            maxlength="100"
+            placeholder="Your name or nickname"
+        >
+
+        <label for="decoration">Choose your decoration</label>
+
+        <select id="decoration">
+            <option value="💗">Pink hearts 💗</option>
+            <option value="🥀">Gothic roses 🥀</option>
+            <option value="🌷">Tulips 🌷</option>
+            <option value="🦋">Butterflies 🦋</option>
+            <option value="⭐">Stars ⭐</option>
+            <option value="☁️">Clouds ☁️</option>
+            <option value="🐻">Cute bears 🐻</option>
+        </select>
+
+        <label for="paperColor">Letter paper color</label>
+
+        <select id="paperColor">
+            <option value="#fffaf5">Antique cream</option>
+            <option value="#fff0f5">Blush pink</option>
+            <option value="#f1f5ff">Baby blue</option>
+            <option value="#f6f0ff">Lavender</option>
+            <option value="#f1f9ed">Sage green</option>
+            <option value="#f1e5d2">Gothic parchment</option>
+        </select>
+
+        <div class="buttons">
+            <button class="primary" id="updateBtn" type="button">
+                ✨ Update letter
+            </button>
+
+            <button class="secondary" id="resetBtn" type="button">
+                ↻ Start over
+            </button>
+        </div>
+
+    </section>
+
+    <!-- =================================
+         LETTER PREVIEW
+    ================================== -->
+
+    <section class="panel" id="previewPanel">
+
+        <div class="preview" id="preview">
+
+            <h2>💌 Your little love letter</h2>
+
+            <p class="open-hint">
+                Tap or click the envelope to open your letter.
+            </p>
+
+            <div
+                class="envelope-area"
+                id="envelopeArea"
+                role="button"
+                tabindex="0"
+                aria-label="Open or close the letter"
+            >
+
+                <div class="envelope" id="envelope">
+
+                    <div class="letter" id="miniLetter">
+
+                        <h3 id="miniTitle">
+                            A little letter for you
+                        </h3>
+
+                        <div id="miniDecoration">💗</div>
+
+                        <p id="miniMessage">
+                            Your message will appear here...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <article class="paper" id="fullLetter">
+
+                <div
+                    style="text-align:center;font-size:30px"
+                    id="fullDecoration"
+                >💗</div>
+
+                <h3 id="fullTitle">
+                    A little letter for you
+                </h3>
+
+                <p class="greeting" id="greeting">
+                    To someone special,
+                </p>
+
+                <div class="message" id="fullMessage">
+                    Your message will appear here...
+                </div>
+
+                <div class="signature">
+                    <div>With love,</div>
+                    <strong id="signature">
+                        Someone who cares ♡
+                    </strong>
+                </div>
+
+            </article>
+
+        </div>
+
+        <div class="buttons">
+
+            <button class="secondary" id="openBtn" type="button">
+                💌 Open / close
+            </button>
+
+            <button class="primary" id="downloadBtn" type="button">
+                📄 Save as text
+            </button>
+
+        </div>
+
+        <hr>
+
+        <h2>🔗 Send your letter</h2>
+
+        <p class="help">
+            Generate a link to share your letter. Your webpage must
+            be hosted online so the recipient can open it.
+        </p>
+
+        <div class="buttons">
+
+            <button class="dark" id="linkBtn" type="button">
+                🔗 Generate link
+            </button>
+
+            <button class="secondary" id="copyBtn" type="button">
+                📋 Copy link
+            </button>
+
+            <button class="primary" id="shareBtn" type="button">
+                💬 Share / Messenger
+            </button>
+
+        </div>
+
+        <label for="shareLink">Your letter link</label>
+
+        <input
+            id="shareLink"
+            type="text"
+            placeholder="Generate your link first"
+            readonly
+        >
+
+        <div id="status" role="status" aria-live="polite"></div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <p>Written in the language of love. 🥀</p>
+
+    <p class="author">
+        A small creation by <strong>Yuri Kazutori</strong> ♡
+    </p>
+  <p> P.S. Therese Mariana M.D.R. </p>
+  <p> Written for love, <strong> with love.</strong></p>
+
+    <p class="copyright">
+        © 2026 Yuri Kazutori. All rights reserved.
+    </p>
+
+</footer>
+
+<script>
+"use strict";
+
+/* =========================================
+   LETTER CREATOR
+========================================= */
+
+const $ = id => document.getElementById(id);
+
+const fields = [
+    "recipient",
+    "title",
+    "message",
+    "sender",
+    "decoration",
+    "paperColor"
+];
+
+const allowedDecorations = [
+    "💗", "🥀", "🌷", "🦋", "⭐", "☁️", "🐻"
+];
+
+const allowedPaperColors = [
+    "#fffaf5",
+    "#fff0f5",
+    "#f1f5ff",
+    "#f6f0ff",
+    "#f1f9ed",
+    "#f1e5d2"
+];
+
+let receivedMode = false;
+
+/* Get information from the form */
+
+function getLetter() {
+    return {
+        recipient: $("recipient").value.trim(),
+
+        title:
+            $("title").value.trim() ||
+            "A little letter for you",
+
+        message: $("message").value,
+
+        sender:
+            $("sender").value.trim() ||
+            "Someone who cares ♡",
+
+        decoration: $("decoration").value,
+
+        paperColor: $("paperColor").value
+    };
+}
+
+/* Update the letter preview */
+
+function updatePreview() {
+    const letter = getLetter();
+
+    $("miniTitle").textContent = letter.title;
+    $("miniDecoration").textContent = letter.decoration;
+
+    $("miniMessage").textContent =
+        letter.message || "Your message will appear here...";
+
+    $("fullTitle").textContent = letter.title;
+    $("fullDecoration").textContent = letter.decoration;
+
+    $("greeting").textContent =
+        "To " + (letter.recipient || "someone special") + ",";
+
+    $("fullMessage").textContent =
+        letter.message || "Your message will appear here...";
+
+    $("signature").textContent = letter.sender;
+
+    $("miniLetter").style.background = letter.paperColor;
+    $("fullLetter").style.background = letter.paperColor;
+}
+
+/* Load information into the form */
+
+function setLetter(data) {
+    fields.forEach(id => {
+        if (typeof data[id] === "string") {
+            $(id).value = data[id];
+        }
+    });
+
+    updatePreview();
+}
+
+/* =========================================
+   ENVELOPE ANIMATION
+========================================= */
+
+function toggleLetter() {
+    if (receivedMode) return;
+
+    const isOpen =
+        $("envelope").classList.toggle("open");
+
+    $("preview").classList.toggle("opened", isOpen);
+
+    $("fullLetter").classList.toggle("opened", isOpen);
+
+    $("envelopeArea").setAttribute(
+        "aria-label",
+        isOpen ? "Close the letter" : "Open the letter"
+    );
+}
+
+$("envelopeArea").addEventListener(
+    "click",
+    toggleLetter
+);
+
+$("envelopeArea").addEventListener("keydown", event => {
+    if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleLetter();
+    }
+});
+
+$("openBtn").addEventListener(
+    "click",
+    toggleLetter
+);
+
+/* Update button */
+
+$("updateBtn").addEventListener("click", () => {
+    updatePreview();
+
+    $("status").textContent =
+        "Your letter has been updated. ♡";
+});
+
+/* Update the preview as the user types */
+
+fields.forEach(id => {
+    $(id).addEventListener("input", updatePreview);
+    $(id).addEventListener("change", updatePreview);
+});
+
+/* =========================================
+   SHAREABLE LETTER LINKS
+========================================= */
+
+/*
+   The letter is encoded in the URL fragment.
+   The contents are not sent to the web server,
+   but anyone with the link can read the letter.
+*/
+
+function encodeLetter(letter) {
+    const bytes = new TextEncoder().encode(
+        JSON.stringify(letter)
+    );
+
+    let binary = "";
+
+    bytes.forEach(byte => {
+        binary += String.fromCharCode(byte);
+    });
+
+    return btoa(binary)
+        .replace(/\+/g, "-")
+        .replace(/\//g, "_")
+        .replace(/=+$/, "");
+}
+
+function decodeLetter(encoded) {
+    const base64 = encoded
+        .replace(/-/g, "+")
+        .replace(/_/g, "/");
+
+    const padded =
+        base64 +
+        "=".repeat((4 - base64.length % 4) % 4);
+
+    const binary = atob(padded);
+
+    const bytes = Uint8Array.from(
+        binary,
+        character => character.charCodeAt(0)
+    );
+
+    return JSON.parse(
+        new TextDecoder().decode(bytes)
+    );
+}
+
+/* Generate a link */
+
+function generateLink() {
+    updatePreview();
+
+    if (!/^https?:$/.test(location.protocol)) {
+        $("status").textContent =
+            "Please host this webpage online first. " +
+            "A local file address cannot be opened by someone else.";
+
+        return "";
+    }
+
+    const url = new URL(location.href);
+
+    url.search = "";
+
+    url.hash = "letter=" + encodeLetter(getLetter());
+
+    $("shareLink").value = url.href;
+
+    $("status").textContent =
+        "Your letter link is ready! Anyone with the link can read it.";
+
+    return url.href;
+}
+
+$("linkBtn").addEventListener(
+    "click",
+    generateLink
+);
+
+/* =========================================
+   COPY LINK
+========================================= */
+
+async function copyText(text) {
+    if (
+        navigator.clipboard &&
+        window.isSecureContext
+    ) {
+        await navigator.clipboard.writeText(text);
+        return true;
+    }
+
+    $("shareLink").focus();
+    $("shareLink").select();
+
+    return document.execCommand("copy");
+}
+
+$("copyBtn").addEventListener("click", async () => {
+    const link =
+        $("shareLink").value || generateLink();
+
+    if (!link) return;
+
+    try {
+        const copied = await copyText(link);
+
+        $("status").textContent = copied
+            ? "Link copied! Paste it into Messenger. 💌"
+            : "Please select and copy the link manually.";
+
+    } catch {
+        $("shareLink").focus();
+        $("shareLink").select();
+
+        $("status").textContent =
+            "Please copy the selected link and paste it into Messenger.";
+    }
+});
+
+/* =========================================
+   SHARE THROUGH DEVICE SHARE MENU
+========================================= */
+
+$("shareBtn").addEventListener("click", async () => {
+    const link =
+        $("shareLink").value || generateLink();
+
+    if (!link) return;
+
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: getLetter().title,
+
+                text:
+                    "Someone has a little letter for you. 💌",
+
+                url: link
+            });
+
+            $("status").textContent =
+                "Share menu opened!";
+
+        } catch (error) {
+            if (error.name !== "AbortError") {
+                $("status").textContent =
+                    "Copy the link and paste it into Messenger.";
+            }
+        }
+
+    } else {
+        try {
+            const copied = await copyText(link);
+
+            $("status").textContent = copied
+                ? "Link copied! Open Messenger and paste it into your chat. 💌"
+                : "Copy the link above and paste it into Messenger.";
+
+        } catch {
+            $("shareLink").focus();
+            $("shareLink").select();
+
+            $("status").textContent =
+                "Copy the link above and paste it into Messenger.";
+        }
+    }
+});
+
+/* =========================================
+   DOWNLOAD LETTER AS A TEXT FILE
+========================================= */
+
+$("downloadBtn").addEventListener("click", () => {
+    const letter = getLetter();
+
+    const contents =
+        letter.title + "\n\n" +
+        "To " +
+        (letter.recipient || "someone special") +
+        ",\n\n" +
+        letter.message +
+        "\n\nWith love,\n" +
+        letter.sender;
+
+    const blob = new Blob(
+        [contents],
+        { type: "text/plain;charset=utf-8" }
+    );
+
+    const url = URL.createObjectURL(blob);
+
+    const anchor = document.createElement("a");
+
+    anchor.href = url;
+    anchor.download = "my-love-letter.txt";
+
+    document.body.appendChild(anchor);
+
+    anchor.click();
+    anchor.remove();
+
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+    }, 1000);
+});
+
+/* =========================================
+   RESET FORM
+========================================= */
+
+$("resetBtn").addEventListener("click", () => {
+    $("recipient").value = "";
+    $("title").value = "";
+    $("message").value = "";
+    $("sender").value = "";
+
+    $("decoration").value = "💗";
+    $("paperColor").value = "#fffaf5";
+
+    $("envelope").classList.remove("open");
+    $("preview").classList.remove("opened");
+    $("fullLetter").classList.remove("opened");
+
+    $("shareLink").value = "";
+    $("status").textContent = "";
+
+    updatePreview();
+});
+
+/* =========================================
+   SAFE DISPLAY OF SHARED LETTERS
+========================================= */
+
+function escapeHTML(value) {
+    return String(value).replace(/[&<>"']/g, character => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+    })[character]);
+}
+
+/* Open a letter received through a shared link */
+
+function loadSharedLetter() {
+    const match =
+        location.hash.match(/^#letter=(.+)$/);
+
+    if (!match) {
+        updatePreview();
+        return;
+    }
+
+    try {
+        const data = decodeLetter(match[1]);
+
+        if (
+            !data ||
+            typeof data !== "object" ||
+            typeof data.title !== "string" ||
+            typeof data.message !== "string" ||
+            typeof data.recipient !== "string" ||
+            typeof data.sender !== "string" ||
+            !allowedDecorations.includes(data.decoration) ||
+            !allowedPaperColors.includes(data.paperColor)
+        ) {
+            throw new Error("Invalid letter");
+        }
+
+        setLetter(data);
+
+        receivedMode = true;
+
+        $("editorPanel").remove();
+
+        $("previewPanel").innerHTML = `
+            <div
+                class="received-letter"
+                style="background:${data.paperColor}"
+            >
+                <div style="text-align:center;font-size:36px">
+                    ${data.decoration}
+                </div>
+
+                <h2>A letter just for you ♡</h2>
+
+                <p style="text-align:center">
+                    Someone made this with love.
+                </p>
+
+                <h2>${escapeHTML(data.title)}</h2>
+
+                <p>
+                    <strong>
+                        To ${escapeHTML(
+                            data.recipient || "someone special"
+                        )},
+                    </strong>
+                </p>
+
+                <div>
+                    ${escapeHTML(data.message).replace(/\n/g, "<br>")}
+                </div>
+
+                <p class="received-signature">
+                    With love,<br>
+                    <strong>${escapeHTML(data.sender)}</strong>
+                </p>
+
+                <p style="text-align:center;margin-bottom:0">
+                    ♡ End of letter ♡
+                </p>
+            </div>
+        `;
+
+        $("mainContainer").style.gridTemplateColumns =
+            "minmax(0, 1fr)";
+
+        $("mainContainer").style.maxWidth = "760px";
+
+    } catch {
+        $("status").textContent =
+            "Sorry, this letter link is invalid or has been changed.";
+
+        updatePreview();
+    }
+}
+
+/* Start the website */
+
+loadSharedLetter();
+</script>
+
+</body>
+</html>
